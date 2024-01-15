@@ -1,4 +1,4 @@
-[test](https://rawcdn.githack.com/seaman47/Projects_Analytics_DS/3cb1600ede29c26ce05c2f1d0644274d187130da/security/006_%D0%A1%D0%9F%D0%9E_2022_%D0%9F6_v3.html)
+[test](https://rawcdn.githack.com/seaman47/Projects_Analytics_DS/cd05f552b8d9c850a171c14d08cef945b4e2b3a6/Projects/006_%D0%A1%D0%9F%D0%9E_2022_%D0%9F6_v3.html)
 
 Проекты, выполненые в ходе обучения на курсе "Специалист по Data Science" Яндeкc Практикyм
 | Название проекта | Описание | Используемые библиотеки |
