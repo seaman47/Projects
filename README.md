@@ -1,7 +1,7 @@
 Проекты
 | Название проекта | Описание | Используемые библиотеки |
 | :---------------------- | :---------------------- | :---------------------- |
-| [Расходы на охрану](https://rawcdn.githack.com/seaman47/Projects_Analytics_DS/cd05f552b8d9c850a171c14d08cef945b4e2b3a6/Projects/006_%D0%A1%D0%9F%D0%9E_2022_%D0%9F6_v3.html) | Анализ расходов на охрану учереждений| *numpy, pandas, plotly*
+| [Расходы на охрану](https://rawcdn.githack.com/seaman47/Projects_Analytics_DS/eeeed7e0aa590440eee968a92b253917feac4ba4/Projects/006_%D0%A1%D0%9F%D0%9E_2022_%D0%9F6_v3_with_code.html) | Анализ расходов на охрану учереждений| *numpy, pandas, plotly*
 
 
 Проекты, выполненые в ходе обучения на курсе "Специалист по Data Science" Яндeкc Практикyм
