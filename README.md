@@ -1,6 +1,7 @@
 Проекты
 | Название проекта | Описание | Используемые библиотеки |
 | :---------------------- | :---------------------- | :---------------------- |
+|[Тестовое задание](https://docs.google.com/spreadsheets/d/1nOOuuLTjFtoQ0dKqjJaRiLMXaQAIgD77m18mBZz7rdM/edit?usp=sharing)|Продуктовая аналитика|Google Sheets
 | [Расходы на охрану](https://rawcdn.githack.com/seaman47/Projects_Analytics_DS/eeeed7e0aa590440eee968a92b253917feac4ba4/Projects/006_%D0%A1%D0%9F%D0%9E_2022_%D0%9F6_v3_with_code.html) | Анализ расходов на охрану учереждений| *numpy, pandas, plotly*
 
 
