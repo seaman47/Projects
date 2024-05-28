@@ -1,0 +1,125 @@
+-- Задание №1
+-- Вывести 4 колонки: tasks.id, tasks.title, кол-во ракурсов и кол-во фото(все кроме ракурсов и инструкций) заданий типа "Снегопад. Содержание УЗ (1 день)" с 1-7 февраля текущего года.
+-- Поле sticker_id может содрежать значение null и его необходимо учитывать при формировании 4 колонки
+-- Таблицы tasks и files необходимо заполнить самостоятельно для демонстрации результата.
+-- Использовать в качестве СУБД postgresql
+
+-- Таблица work_types
+id			title
+....
+100004027	Снегопад. Содержание УЗ (1 день)
+100004028	Снегопад. Содержание УЗ (2 день)
+100004029	Снегопад. Содержание УЗ (3 день)
+100003926	Промывка ТПУ и ПЗ
+...
+
+-- Таблица stickers
+id	title
+1	ДО
+2	ПОСЛЕ
+3	Посев газона
+4	Ракурс
+5	Инструкция
+....
+
+-- Таблица tasks
+id	title	work_type_id	date_created
+....
+
+-- Таблица files
+id	task_id	sticker_id
+....
+●●●●●●●●
+
+SELECT tasks.id,
+       tasks.title,
+       COUNT (CASE WHEN stickers.title = "Ракурс" THEN tasks.id END) AS кол_ракурсов,
+       COUNT (CASE WHEN stickers.title NOT IN ("Ракурс", "Инструкция") THEN tasks.id END) AS кол_фото
+FROM tasks
+LEFT JOIN work_types ON work_types.id = tasks.work_type_id
+LEFT JOIN files ON files.task_id = tasks.id
+LEFT JOIN files ON stickers.id = files.sticker_id
+WHERE work_types.title = "Снегопад. Содержание УЗ (1 день)"
+      AND EXTRACT(year FROM tasks.date_created) = EXTRACT(year FROM CURRENT_DATE)
+      AND EXTRACT(month FROM tasks.date_created) = 2
+      AND EXTRACT(day FROM tasks.date_created) BETWEEN 1 AND 7
+GROUP BY tasks.id, tasks.title;
+
+
+
+
+Задание №2
+Есть отчётная таблица work_hours за прошедший месяц, в которой содержатся данные по районам о количестве часов, которое дворники провели за работой
+
++----------+------------+--------+
+| dvornik  | district   | hours  |
++----------+------------+--------+
+| zuzi_1   | Зюзино     | 180    |
+| zuzi_2   | Зюзино     | 192    |
+| zuzi_3   | Зюзино     | 200    |
+| zuzi_4   | Зюзино     | 208    |
+| zuzi_5   | Зюзино     | 240    |
+| sevbut_1 | Сев.Бутово | 140    |
+| sevbut_2 | Сев.Бутово | 156    |
+| sevbut_3 | Сев.Бутово | 172    |
+| sevbut_4 | Сев.Бутово | 192    |
+| sevbut_5 | Сев.Бутово | 208    |
+..................................
+
+Мы хотим для каждого дворника увидеть, сколько процентов составляет его значение отработанных часов от максимального значения в районе
+Проценты нужно округлить до целого значения.
+
+●●●●●●●●
+
+SELECT dvornik,
+       ROUND(CAST(hours AS decimal) / MAX(hours) OVER(PARTITION BY district)*100) AS проц_отраб_часов
+FROM work_hours;
+
+У меня в тренажере код выше выдавал либо 100 либо 0, т.е. округлял результат деления до целого числа, несмотря на то, что использовал CAST.
+В таком варианте работал:
+
+SELECT dvornik,
+       ROUND((hours - 0.0000001) / MAX(hours) OVER(PARTITION BY district)*100) AS проц_отраб_часов
+FROM work_hours;
+
+Можно еще через SUBQUERY:
+SELECT dvornik, 
+       ROUND(CAST(hours AS decimal) / (SELECT MAX(hours) 
+                                       FROM work_hours as w2 
+                                       WHERE w2.district = w1.district) * 100)
+FROM work_hours as w1;
+
+
+
+Задание №3
+
+Есть таблица дворников по району Зюзино zuzi_dvorniks c количеством отработанных ими часов за прошлый месяц.
+
++----------+----------+--------+
+| dvornik  | uchastok | hours  |
++----------+----------+--------+
+| zuzi_1   |   mu1    |  210   |
+| zuzi_2   |   mu1    |  234   |
+| zuzi_3   |   mu2    |  252   |
+| zuzi_4   |   mu2    |  270   |
+| zuzi_5   |   mu2    |  312   |
+| zuzi_6   |   mu2    |  312   |
+| zuzi_7   |   mu2    |  360   |
+| zuzi_8   |   mu3    |  288   |
+| zuzi_9   |   mu3    |  288   |
+| zuzi_10  |   mu3    |  300   |
+................................ 
+
+Для каждого дворника мы хотим увидеть:
+
+- сколько дворников трудится в его мастерском участке (uchastok)
+- чему равняется среднее количество часов, затраченных на работу в его мастерском участке
+- на сколько процентов отклоняется его значение затраченных часов на работу в прошлом месяце от среднего значения по МУ
+
+●●●●●●●●
+
+SELECT dvornik, 
+       COUNT(*) OVER(PARTITION BY uchastok),
+       AVG(hours) OVER(PARTITION BY uchastok),
+       (hours - AVG(hours) OVER(PARTITION BY uchastok)) / AVG(hours) OVER(PARTITION BY uchastok) * 100
+FROM zuzi_dvorniks
