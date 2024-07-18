@@ -1,6 +1,6 @@
-Ссылка на online server с работающим кодом
-https://onecompiler.com/sqlserver/42kfynrdg
-------------------
+[Ссылка](https://onecompiler.com/sqlserver/42kfynrdg) на online server с работающим кодом
+
+
 ```
 ;WITH 
 CTE1 AS -- ID счетов, содержащих "Контур-Экстерн"
