@@ -1,3 +1,7 @@
+
+Условие задачи — см. 
+
+
 [Ссылка](https://onecompiler.com/sqlserver/42kfynrdg) на online server с работающим кодом
 
 
