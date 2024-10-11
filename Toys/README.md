@@ -2,3 +2,4 @@
 
 Две таблицы — Sales и Products
 [fgfgfg](Toys/Dashboard.jpg)
+
