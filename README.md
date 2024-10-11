@@ -1,6 +1,7 @@
 ### Работы / Тестовые задания
 | Название проекта | Описание | Используемые программы |
 | :---------------------- | :---------------------- | :---------------------- |
+|[Работа](Toys)||Excel, Power Pivot, Power Query
 |[Тестовое задание](Kontur)||SQL
 |[Тестовое задание](test_Excel_SQL_InfC)||Excel, Power Query, SQL
 |[Тестовое задание](https://docs.google.com/spreadsheets/d/1nOOuuLTjFtoQ0dKqjJaRiLMXaQAIgD77m18mBZz7rdM/edit?usp=sharing)|Продуктовая аналитика|Google Sheets
