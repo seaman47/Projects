@@ -1,11 +1,11 @@
 ### Работы / Тестовые задания
-| Название проекта | Описание | Используемые программы |
-| :---------------------- | :---------------------- | :---------------------- |
-|[Работа](Toys)|Анализ продаж товаров|Excel, Power Pivot, Power Query
-|[Тестовое задание](Kontur)||SQL
-|[Тестовое задание](test_Excel_SQL_InfC)||Excel, Power Query, SQL
-|[Тестовое задание](https://docs.google.com/spreadsheets/d/1nOOuuLTjFtoQ0dKqjJaRiLMXaQAIgD77m18mBZz7rdM/edit?usp=sharing)|Продуктовая аналитика|Google Sheets
-| [Работа](https://rawcdn.githack.com/seaman47/Projects_Analytics_DS/0dbb62f7101a40420cb7084276b6f6364952021d/%D0%A0%D0%B0%D1%81%D1%85%D0%BE%D0%B4%D1%8B_%D0%BD%D0%B0_%D0%BE%D1%85%D1%80%D0%B0%D0%BD%D1%83/006_%D0%A1%D0%9F%D0%9E_2022_%D0%9F6_v3_with_code.html) | Анализ расходов на охрану учреждений| Python + Numpy, Pandas, Plotly
+| Название проекта | Используемые программы |
+| :---------------------- | :---------------------- |
+|[Анализ продаж товаров](Toys)|Excel, Power Pivot, Power Query
+|[Тестовое задание](Kontur)|SQL
+|[Тестовое задание](test_Excel_SQL_InfC)|Excel, Power Query, SQL
+|[Продуктовая аналитика](https://docs.google.com/spreadsheets/d/1nOOuuLTjFtoQ0dKqjJaRiLMXaQAIgD77m18mBZz7rdM/edit?usp=sharing)|Google Sheets
+| [Анализ расходов на охрану учреждений](https://rawcdn.githack.com/seaman47/Projects_Analytics_DS/0dbb62f7101a40420cb7084276b6f6364952021d/%D0%A0%D0%B0%D1%81%D1%85%D0%BE%D0%B4%D1%8B_%D0%BD%D0%B0_%D0%BE%D1%85%D1%80%D0%B0%D0%BD%D1%83/006_%D0%A1%D0%9F%D0%9E_2022_%D0%9F6_v3_with_code.html) | Python + Numpy, Pandas, Plotly
 
 <br>
 
