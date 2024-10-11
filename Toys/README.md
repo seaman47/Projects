@@ -1,5 +1,8 @@
 Анализ продаж товаров
 
-Две таблицы — Sales и Products
-[fgfgfg](Dashboard.jpg)
+**Исходные данные**  
+- Таблица Sales;
+- Таблица Products
+
+Финальный {дашборд](Dashboard.jpg)
 
