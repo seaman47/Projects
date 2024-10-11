@@ -4,5 +4,8 @@
 - Таблица Sales;
 - Таблица Products
 
-Финальный [дашборд](Dashboard.jpg)
+Результат:
+- [Дашборд](Dashboard.jpg)
+
+Файл с р
 
